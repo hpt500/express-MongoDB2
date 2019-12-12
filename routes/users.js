@@ -3,6 +3,7 @@ import { responseClient, md5 } from '../util/util.js';
 
 exports.login = (req, res) => {
     const { phone, password } = req.body;
+    console.log(123, req.body)
     const reg = /^1[34578]\d{9}$/
     if (!phone) {
         responseClient(res, 200, 400, '用户邮箱不可为空');
@@ -20,11 +21,11 @@ exports.login = (req, res) => {
         password: md5(password),
     })
         .then(userInfo => {
-            console.log(userInfo._id)
+            console.log(userInfo)
             if (userInfo) {
                 //登录成功后设置session
                 req.session.userInfo = userInfo;
-                responseClient(res, 200, 200, '登录成功', null);
+                responseClient(res, 200, 200, '登录成功', userInfo);
             } else {
                 responseClient(res, 200, 402, '用户名或者密码错误');
             }

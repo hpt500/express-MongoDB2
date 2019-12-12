@@ -8,9 +8,11 @@
   "dependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
+    "body-parser": "^1.19.0",
     "consola": "^2.11.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "ejs": "^3.0.1",
     "express": "~4.16.1",
     "express-session": "^1.17.0",
     "http-errors": "~1.6.3",
